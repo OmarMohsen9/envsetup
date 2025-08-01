@@ -1,0 +1,38 @@
+- name: Get current date
+  ansible.builtin.command: date
+  register: date_output
+  become: false
+
+- name: Append hello signature with date in file
+  ansible.builtin.blockinfile:
+    path: "{{ file_path }}"
+    block: |
+      echo "  _   _  ____  __    __    _____ /\ "
+      echo " ( )_( )( ___)(  )  (  )  (  _  ))("
+      echo "  ) _ (  )__)  )(__  )(__  )(_)( \/ "
+      echo " (_) (_)(____)(____)(____)(_____)()"
+      echo " {{ date_output.stdout }} "
+    marker: "# {mark} ANSIBLE MANAGED BLOCK"
+    state: present
+  become: true
+
+- name: Create user with hostname
+  ansible.builtin.user:
+    name: "{{ username }}"
+    state: present
+    shell: /bin/bash
+    home: "/home/{{ username }}"
+    create_home: true
+    password: "" #noPassword
+    comment: "{{ username }}"
+  become: true
+
+- name: Grant sudo Privileges
+  ansible.builtin.lineinfile:
+    path: "/etc/sudoers.d/{{ username }}"
+    line: "{{ username }} ALL=(ALL) ALL"
+    create: yes
+    state: present
+    mode: '0440'
+    validate: 'visudo -cf %s'
+  become: true

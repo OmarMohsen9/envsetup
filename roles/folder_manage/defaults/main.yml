@@ -1,0 +1,3 @@
+folder_path: /home/{{ ansible_user }}/Desktop/test_folder
+tardir_path: /home/{{ ansible_user }}/Desktop/playground_folder/test_folder.tgz
+playground_path: /home/{{ ansible_user }}/Desktop/playground_folder

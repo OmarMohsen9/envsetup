@@ -1,0 +1,9 @@
+---
+- name: Ping play
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Ping Host
+      ansible.builtin.ping:
+

@@ -1,0 +1,10 @@
+- name: Create Playground Folder
+  ansible.builtin.file:
+    path: "{{ playground_path }}"
+    state: directory
+    mode: '0755'
+
+- name: Compress test directory
+  community.general.archive:
+    path: "{{ folder_path }}"
+    dest: "{{ tardir_path }}"

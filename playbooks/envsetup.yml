@@ -1,0 +1,7 @@
+---
+- name: Import all roles from omar.collection
+  hosts: all
+  roles:
+    - env.setup.folder_manage
+    - env.setup.tools_install
+    - env.setup.system_config

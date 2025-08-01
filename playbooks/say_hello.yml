@@ -1,0 +1,14 @@
+---
+- name: Test custom "say_hi" plugin
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Say hi using custom plugin
+      env.setup.greetings:
+      register: hi_output
+
+    - name: Print output message
+      debug:
+        var: hi_output.msg
+

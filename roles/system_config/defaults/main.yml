@@ -1,0 +1,2 @@
+file_path: /home/{{ ansible_user }}/.bashrc
+username: "{{ lookup('pipe','whoami') }}"
