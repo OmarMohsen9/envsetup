@@ -57,7 +57,7 @@ ansible-galaxy collection install -r requirements.yml
     - env.setup
 
   roles:
-    - folder_tasks
+    - folder_manage
     - tools_install
     - system_config
 ```
