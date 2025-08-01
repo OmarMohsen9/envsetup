@@ -1,5 +1,5 @@
 ---
-- name: Import all roles from omar.collection
+- name: Import all roles from env.setup
   hosts: all
   roles:
     - env.setup.folder_manage
