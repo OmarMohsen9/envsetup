@@ -26,13 +26,7 @@ This collection was originally based on 5 standalone playbooks, and is now refac
 
 ### 1. Install the Collection
 
-From Ansible Galaxy:
-
-```bash
-ansible-galaxy collection install env.setup
-```
-
-Or from a local tarball:
+from a local tarball:
 
 ```bash
 ansible-galaxy collection install env-setup-1.0.0.tar.gz
@@ -52,6 +46,7 @@ collections:
 ```bash
 ansible-galaxy collection install -r requirements.yml
 ```
+(Ansible Galaxy installation currently not supported)
 
 ### 2. Example Playbook
 ```yaml
@@ -59,7 +54,7 @@ ansible-galaxy collection install -r requirements.yml
 - hosts: all
   become: true
   collections:
-    - env.essentials
+    - env.setup
 
   roles:
     - folder_tasks
@@ -94,4 +89,4 @@ env.setup/
 ```
 
 ## License
-MIT License © 2025 [Omar Mohsen]
+MIT License © 2025 Omar Mohsen
