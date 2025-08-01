@@ -1,10 +1,9 @@
+# requirements.yml
 collections:
   - name: env.setup
-    version: "1.0.0"  # optional: remove this line to always get the latest
-    # Or use a GitHub repo directly:
-    # source: https://github.com/omarmohsen9/env.setup.git
-    # type: git
-    # version: main
+    source: https://github.com/yourusername/env.setup.git
+    type: git
+    version: main
     # Or use tar instead:
     #source: ./env-setup-1.0.0.tar.gz
 
